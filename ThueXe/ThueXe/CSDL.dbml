@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLITHUEXE" Class="CSDLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-VN0RONC\SQLEXPRESS;Initial Catalog=QUANLITHUEXE;Integrated Security=True" SettingsObjectName="ThueXe.Properties.Settings" SettingsPropertyName="QUANLITHUEXEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BANGCAP" Member="BANGCAPs">
+    <Type Name="BANGCAP">
+      <Column Name="MABANG" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENBANG" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="THOIGIANHIEULUC" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="MATX" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Association Name="TAIXE_BANGCAP" Member="TAIXE" ThisKey="MATX" OtherKey="MATX" Type="TAIXE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OTO" Member="OTOs">
+    <Type Name="OTO">
+      <Column Name="MAOTO" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENOTO" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SOGHE" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="TRANGTHAI" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="OTO_HOPDONG" Member="HOPDONGs" ThisKey="MAOTO" OtherKey="MAOTO_F" Type="HOPDONG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DANGNHAP" Member="DANGNHAPs">
+    <Type Name="DANGNHAP">
+      <Column Name="TAIKHOAN" Type="System.String" DbType="Char(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MATKHAU" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QUYEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOPDONG" Member="HOPDONGs">
+    <Type Name="HOPDONG">
+      <Column Name="MAHD" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENHD" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYTHUE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYTRA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DIADIEM" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TIENTHUE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="MANV_F" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="MAOTO_F" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="MATX_F" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="MAKH_F" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Association Name="OTO_HOPDONG" Member="OTO" ThisKey="MAOTO_F" OtherKey="MAOTO" Type="OTO" IsForeignKey="true" />
+      <Association Name="KHACHHANG_HOPDONG" Member="KHACHHANG" ThisKey="MAKH_F" OtherKey="MAKH" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="NHANVIEN_HOPDONG" Member="NHANVIEN" ThisKey="MANV_F" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
+      <Association Name="TAIXE_HOPDONG" Member="TAIXE" ThisKey="MATX_F" OtherKey="MATX" Type="TAIXE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
+    <Type Name="KHACHHANG">
+      <Column Name="MAKH" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENKH" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="Char(11) NOT NULL" CanBeNull="false" />
+      <Association Name="KHACHHANG_HOPDONG" Member="HOPDONGs" ThisKey="MAKH" OtherKey="MAKH_F" Type="HOPDONG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHANVIEN" Member="NHANVIENs">
+    <Type Name="NHANVIEN">
+      <Column Name="MANV" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENNV" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="Char(11) NOT NULL" CanBeNull="false" />
+      <Association Name="NHANVIEN_HOPDONG" Member="HOPDONGs" ThisKey="MANV" OtherKey="MANV_F" Type="HOPDONG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TAIXE" Member="TAIXEs">
+    <Type Name="TAIXE">
+      <Column Name="MATX" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENTX" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="Char(11) NOT NULL" CanBeNull="false" />
+      <Association Name="TAIXE_BANGCAP" Member="BANGCAPs" ThisKey="MATX" OtherKey="MATX" Type="BANGCAP" />
+      <Association Name="TAIXE_HOPDONG" Member="HOPDONGs" ThisKey="MATX" OtherKey="MATX_F" Type="HOPDONG" />
+    </Type>
+  </Table>
+</Database>

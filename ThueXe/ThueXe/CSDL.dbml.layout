@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.25" name="CSDL">
+  <DataContextMoniker Name="/CSDLDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e8c71148-f1d8-46c9-a466-3f2725d85216" absoluteBounds="3.5, 4.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CSDLDataContext/BANGCAP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6a6bda71-836a-4dc0-948f-1be574a248b7" absoluteBounds="3.515, 4.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe322b7e-c367-48ca-91c0-1531343c92bf" absoluteBounds="0.75, 1.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CSDLDataContext/OTO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f89ff57a-6584-499c-a0b8-dd46e6fa52c3" absoluteBounds="0.765, 1.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="77e086a5-2bda-4abd-8cc7-fd79237bc540" absoluteBounds="3.75, 7.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/CSDLDataContext/DANGNHAP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ccdad5f1-be3a-4614-a1b8-2830bca8ffcf" absoluteBounds="3.765, 7.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a7ce4451-936f-4114-8c13-6ac5bc4a22b9" absoluteBounds="3.5, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/CSDLDataContext/HOPDONG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8de9bba3-b8f7-4069-8778-86386fc6b54a" absoluteBounds="3.515, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a28b50d-1297-4814-8d01-4cc596a52a8d" absoluteBounds="0.75, 6.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/CSDLDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62b01606-70d7-49ff-b4e5-6e894870ad74" absoluteBounds="0.765, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f130b25b-3d10-432a-9a76-7c879f27b040" absoluteBounds="0.75, 9.25, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/CSDLDataContext/NHANVIEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0968eeab-b1da-43ae-94b7-e569a26501e6" absoluteBounds="0.765, 9.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f833a5a3-3800-4f5d-b3b3-b4b4fd3bf8c0" absoluteBounds="0.75, 4.25, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/CSDLDataContext/TAIXE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0820431-a8a6-475e-b8c1-96daa31769db" absoluteBounds="0.765, 4.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.28929768880208); (3.04166666666667 : 2.28929768880208 : JumpStart); (3.27083333333333 : 2.28929768880208 : JumpEnd); (3.5 : 2.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CSDLDataContext/OTO/OTO_HOPDONG" />
+      <nodes>
+        <classShapeMoniker Id="fe322b7e-c367-48ca-91c0-1531343c92bf" />
+        <classShapeMoniker Id="a7ce4451-936f-4114-8c13-6ac5bc4a22b9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.75); (3.125 : 6.375); (3.125 : 1.48839684440104); (3.5 : 1.48839684440104)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CSDLDataContext/KHACHHANG/KHACHHANG_HOPDONG" />
+      <nodes>
+        <classShapeMoniker Id="6a28b50d-1297-4814-8d01-4cc596a52a8d" />
+        <classShapeMoniker Id="a7ce4451-936f-4114-8c13-6ac5bc4a22b9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.31266150250401); (3.3125 : 8.75016150250401); (3.3125 : 2.91710283007812); (3.5 : 2.91710283007812)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CSDLDataContext/NHANVIEN/NHANVIEN_HOPDONG" />
+      <nodes>
+        <classShapeMoniker Id="f130b25b-3d10-432a-9a76-7c879f27b040" />
+        <classShapeMoniker Id="a7ce4451-936f-4114-8c13-6ac5bc4a22b9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.16429768880208); (3.04166666666667 : 5.16429768880208 : JumpStart); (3.20833333333333 : 5.16429768880208 : JumpEnd); (3.22916666666667 : 5.16429768880208 : JumpStart); (3.39583333333333 : 5.16429768880208 : JumpEnd); (3.5 : 5.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CSDLDataContext/TAIXE/TAIXE_BANGCAP" />
+      <nodes>
+        <classShapeMoniker Id="f833a5a3-3800-4f5d-b3b3-b4b4fd3bf8c0" />
+        <classShapeMoniker Id="e8c71148-f1d8-46c9-a466-3f2725d85216" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.3112992741887); (3.06607443490112 : 3.99522483928758 : JumpStart); (3.18392556509888 : 3.87737370908982 : JumpEnd); (3.1875 : 3.8737992741887); (3.1875 : 1.88884726660156); (3.5 : 1.88884726660156)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CSDLDataContext/TAIXE/TAIXE_HOPDONG" />
+      <nodes>
+        <classShapeMoniker Id="f833a5a3-3800-4f5d-b3b3-b4b4fd3bf8c0" />
+        <classShapeMoniker Id="a7ce4451-936f-4114-8c13-6ac5bc4a22b9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
